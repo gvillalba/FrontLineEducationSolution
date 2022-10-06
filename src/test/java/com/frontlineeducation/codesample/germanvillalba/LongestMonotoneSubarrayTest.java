@@ -96,6 +96,13 @@ public class LongestMonotoneSubarrayTest extends TestCase
         checkArray(expectedSubArray, actualSubarray);
     }
 
+    public void testReversed() {
+        int[] array = {6, 5, 4, 3, 2}; // Reversed
+        int[] expectedSubArray = { 6 };
+        int[] actualSubarray = LongestMonotoneSubarray.findLongestMonotoneSubarray(array);
+        checkArray(expectedSubArray, actualSubarray);
+    }
+
     private void checkArray(int[] expectedSubarray, int[] actualSubarray) {
         if (actualSubarray.length == expectedSubarray.length) {
             for (int i = 0; i < actualSubarray.length; i++) {

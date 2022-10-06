@@ -62,6 +62,20 @@ public class SortedTrieTest extends TestCase
         checkOutput(data,  expectedOutputArray);
     }
 
+    public void testExampleDuplicates() {
+        String[] data = {
+                "A.B.C",
+                "A.B.C",
+                "A.B.C"
+        };
+        String[] expectedOutputArray = {
+                "A",
+                "--B",
+                "----C"
+        };
+        checkOutput(data,  expectedOutputArray);
+    }
+
     public void testExampleWithUpperCaseSingleCharacter() {
         String[] data = {
                 "A.B.C",
@@ -235,8 +249,7 @@ public class SortedTrieTest extends TestCase
         sortedTrie.printToSystemOut();
         if (actualOutput.size() == expectedOutput.size()) {
             for (int i = 0; i < actualOutput.size(); i++) {
-                assertTrue(actualOutput.get(i).equals(expectedOutput.get(i)));
-//                assertEquals(actualOutput.get(i), expectedOutput.get(i));
+                assertEquals(actualOutput.get(i), expectedOutput.get(i));
             }
         } else {
             assertTrue(false);

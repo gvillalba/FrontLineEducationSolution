@@ -9,7 +9,7 @@ import java.util.List;
  @author German Villalba
 **/
 
-/**
+/*
  Part 2
  (1) Implement a method to convert a sequence of records into a hierarchical (tree) sorted structure.
  (2) Provide a method to print the resulting tree structure.
@@ -43,7 +43,7 @@ import java.util.List;
  --5
  ----3
  ----6
- **/
+ */
 public class SortedTrie {
     private final Trie trie;
 
@@ -85,6 +85,6 @@ public class SortedTrie {
     }
 
     public List<String> getOutput() {
-        return this.trie.print();
+        return this.trie.generateOutput();
     }
 }

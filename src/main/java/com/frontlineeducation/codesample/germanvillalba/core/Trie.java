@@ -32,13 +32,13 @@ public class Trie {
         addRecord(record, child, level + 1);
     }
 
-    public List<String> print() {
+    public List<String> generateOutput() {
         List<String> output = new ArrayList<String>();
-        this.print(this.root, -1, output);
+        this.generateOutput(this.root, -1, output);
         return output;
     }
 
-    private void print(TrieNode node, int level, List<String> output) {
+    private void generateOutput(TrieNode node, int level, List<String> output) {
         if (node == null) {
             return;
         }
@@ -53,60 +53,7 @@ public class Trie {
         TreeMap<String, TrieNode> children = node.getChildren();
         for (String key: children.keySet()) {
             TrieNode child = children.get(key);
-            print(child, level + 1, output);
+            generateOutput(child, level + 1, output);
         }
     }
-
-//    public static void main(String[] args) {
-//        System.out.println("Test");
-//        String[] record1 = {"A", "B", "C"};
-//        String[] record2 = {"A", "B", "D"};
-//        String[] record3 = {"A", "E", "F"};
-//        Trie trie = new Trie();
-//        trie.addRecord(record1);
-//        trie.addRecord(record2);
-//        trie.addRecord(record3);
-//
-//        System.out.println(trie);
-//        trie.print();
-//    }
-    public static void main(String[] args) {
-        System.out.println("Test");
-
-//        1.2.3
-//        1.2.5
-//        1.5.6
-//        1.2.4
-//        2.5.6
-//        1.5.7
-//        2.5.3
-
-        String[] record1 = {"1", "2", "3"};
-        String[] record2 = {"1", "2", "5"};
-        String[] record3 = {"1", "5", "6"};
-        String[] record4 = {"1", "2", "4"};
-
-        String[] record5 = {"2", "5", "6"};
-
-        String[] record6 = {"1", "5", "7"};
-
-        String[] record7 = {"2", "5", "3"};
-
-
-
-        Trie trie = new Trie();
-        trie.addRecord(record1);
-        trie.addRecord(record2);
-        trie.addRecord(record3);
-        trie.addRecord(record4);
-        trie.addRecord(record5);
-        trie.addRecord(record6);
-        trie.addRecord(record7);
-
-
-        System.out.println(trie);
-        trie.print();
-    }
-
-
 }
