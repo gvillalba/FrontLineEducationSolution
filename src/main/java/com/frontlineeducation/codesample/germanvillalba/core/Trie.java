@@ -3,8 +3,10 @@ package com.frontlineeducation.codesample.germanvillalba.core;
 import java.util.*;
 
 /**
- * @author German Villalba
- */
+ @author German Villalba
+ Trie is a Hierarchical Structure.
+ It is a special type of n-ary tree.
+ **/
 public class Trie {
     private static final String INDENTATION_STR = "--";
     private TrieNode root;
@@ -33,7 +35,7 @@ public class Trie {
     }
 
     public List<String> generateOutput() {
-        List<String> output = new ArrayList<String>();
+        List<String> output = new ArrayList<>();
         this.generateOutput(this.root, -1, output);
         return output;
     }

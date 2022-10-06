@@ -1,5 +1,8 @@
-package com.frontlineeducation.codesample.germanvillalba;
+package com.frontlineeducation.codesample.germanvillalba.test;
 
+import com.frontlineeducation.codesample.germanvillalba.IFrontlineEducationRequirements;
+import com.frontlineeducation.codesample.germanvillalba.solver.FrontlineEducationSolver;
+import com.frontlineeducation.codesample.germanvillalba.test.util.TestUtil;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -31,6 +34,8 @@ public class SortedTrieTest extends TestCase
         return new TestSuite( SortedTrieTest.class );
     }
 
+
+    private IFrontlineEducationRequirements frontlineEducation = new FrontlineEducationSolver();
     /**
      * Test Cases:
      */
@@ -244,9 +249,11 @@ public class SortedTrieTest extends TestCase
         List<String> input = Arrays.asList(data);
         List<String> expectedOutput = Arrays.asList(expectedOutputArray);
 
-        SortedTrie sortedTrie = new SortedTrie(input);
-        List<String> actualOutput = sortedTrie.getOutput();
-        sortedTrie.printToSystemOut();
+        System.out.println("input:");
+//        TestUtil.printArray(input);
+        System.out.println(input);
+        this.frontlineEducation.buildHierarchicalSortedStructure(input);
+        List<String> actualOutput = this.frontlineEducation.printHierarchicalSortedStructure();
         if (actualOutput.size() == expectedOutput.size()) {
             for (int i = 0; i < actualOutput.size(); i++) {
                 assertEquals(actualOutput.get(i), expectedOutput.get(i));

@@ -1,15 +1,10 @@
-package com.frontlineeducation.codesample.germanvillalba;
+package com.frontlineeducation.codesample.germanvillalba.solver;
 
 /**
  * @author German Villalba
  */
 public class LongestMonotoneSubarray {
-    /*
-     Part 1:
-     Find the longest monotone sub-array from an array of numbers.
-     Monotone sub-array is a sequence of elements where each element is bigger than the previous one.
-     */
-    public static int[] findLongestMonotoneSubarray(int[] array) {
+    public int[] findLongestMonotoneSubarray(int[] array) {
         int n = array.length;
         if (n == 0 || n == 1) {
             return array;
