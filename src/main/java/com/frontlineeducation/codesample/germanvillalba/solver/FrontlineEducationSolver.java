@@ -32,6 +32,6 @@ public class FrontlineEducationSolver implements IFrontlineEducationRequirements
     }
 
     public static void main(String[] args) {
-
+        System.out.println("Frontline Education Solver");
     }
 }
